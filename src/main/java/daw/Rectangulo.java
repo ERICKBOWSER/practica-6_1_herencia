@@ -9,9 +9,20 @@ package daw;
  * @author guerig
  */
 public final class Rectangulo extends Poligono implements Dibujable, Movible{
+    
+    // Dado que el rectangulo tiene 4 puntos, creamos 4 puntos
+    private Point punto1;
+    private Point punto2;
+    private Point punto3;
+    private Point punto4;
 
     public Rectangulo(int base, int altura, int numeroLados, String id, String color) {
         super(base, altura, numeroLados, id, color);
+        
+        this.punto1 = new Point(0,0); 
+        this.punto2 = new Point(0, altura);
+        this.punto3 = new Point(base, altura);
+        this.punto4 = new Point(base, 0);        
     }
 
     @Override
@@ -71,22 +82,67 @@ public final class Rectangulo extends Poligono implements Dibujable, Movible{
 
     @Override
     public void moverIzq(int x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto1().setX(- x);
+        this.getPunto2().setX(- x);
+        this.getPunto3().setX(- x);
+        this.getPunto4().setX(- x);
+
     }
 
     @Override
     public void moverDer(int x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto1().setX(+x);
+        this.getPunto2().setX(+x);
+        this.getPunto3().setX(+x);
+        this.getPunto4().setX(+x);
     }
 
     @Override
     public void moverArr(int y) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto1().setY(+ y);
+        this.getPunto2().setY(+ y);
+        this.getPunto3().setY(+ y);
+        this.getPunto4().setY(+ y);
     }
 
     @Override
     public void moverAba(int y) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto1().setY(- y);
+        this.getPunto2().setY(- y);
+        this.getPunto3().setY(- y);
+        this.getPunto4().setY(- y);
+    }
+
+    public Point getPunto1() {
+        return punto1;
+    }
+
+    public void setPunto1(Point punto1) {
+        this.punto1 = punto1;
+    }
+
+    public Point getPunto2() {
+        return punto2;
+    }
+
+    public void setPunto2(Point punto2) {
+        this.punto2 = punto2;
+    }
+
+    public Point getPunto3() {
+        return punto3;
+    }
+
+    public void setPunto3(Point punto3) {
+        this.punto3 = punto3;
+    }
+
+    public Point getPunto4() {
+        return punto4;
+    }
+
+    public void setPunto4(Point punto4) {
+        this.punto4 = punto4;
     }
     
     

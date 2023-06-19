@@ -10,9 +10,17 @@ package daw;
  * @author guerig
  */
 public final class Triángulo extends Poligono implements Comparable<Triángulo>{
+    
+    private Point punto1;
+    private Point punto2;
+    private Point punto3;
 
     public Triángulo(int base, int altura, int numeroLados, String id, String color) {
         super(base, altura, numeroLados, id, color);
+        
+        this.punto1 = new Point(0, 0);
+        this.punto2 = new Point(base, 0);
+        this.punto3 = new Point(base, altura);
     }
 
     @Override

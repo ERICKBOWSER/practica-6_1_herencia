@@ -11,10 +11,12 @@ package daw;
 public class Circulo extends Figura implements Movible{
     
     private int longitudRadio;
+    private Point punto;
 
     public Circulo(int longitudRadio, String id, String color) {
         super(id, color);
         this.longitudRadio = longitudRadio;
+        this.punto = new Point(0,0);
     }
 
     public int getLongitudRadio() {
@@ -50,22 +52,30 @@ public class Circulo extends Figura implements Movible{
 
     @Override
     public void moverIzq(int x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto().setX(- x);
     }
 
     @Override
     public void moverDer(int x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto().setX(+ x);
     }
 
     @Override
     public void moverArr(int y) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto().setY(+ y);
     }
 
     @Override
     public void moverAba(int y) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.getPunto().setY(- y);
+    }
+
+    public Point getPunto() {
+        return punto;
+    }
+
+    public void setPunto(Point punto) {
+        this.punto = punto;
     }
     
     
